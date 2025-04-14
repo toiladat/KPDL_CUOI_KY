@@ -2,9 +2,6 @@ import nltk
 from nltk import sent_tokenize, word_tokenize, pos_tag, RegexpParser
 from itertools import combinations
 
-# Tải các gói dữ liệu cần thiết (chạy lần đầu)
-nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
 
 def build_cooccurrence_graph(text, window=3):
     """

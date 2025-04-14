@@ -2,7 +2,7 @@ import pandas as pd
 import ast
 
 # Đọc dữ liệu từ file gốc
-df = pd.read_csv("E:\MON_TREN_LOP\KHAI_PHA_DU_LIEU\CUOI_KY\Data\data.csv")  # thay bằng đường dẫn thật
+df = pd.read_csv("E:\MON_TREN_LOP\KHAI_PHA_DU_LIEU\CUOI_KY\Data\data_raw.csv")  # thay bằng đường dẫn thật
 
 # Tạo danh sách lưu kết quả
 processed_rows = []
@@ -37,6 +37,6 @@ for _, row in df.iterrows():
 processed_df = pd.DataFrame(processed_rows)
 
 # Lưu ra file CSV mới
-processed_df.to_csv("data_processed.csv", index=False)
+processed_df.to_csv("E:\MON_TREN_LOP\KHAI_PHA_DU_LIEU\CUOI_KY\Data\data_format_title_abstract.csv", index=False)
 
-print("✅ Đã lưu thành công vào data_processed.csv")
+print("✅ Đã lưu thành công vào data_format_title_abstract.csv")
