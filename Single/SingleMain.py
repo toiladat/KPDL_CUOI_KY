@@ -80,7 +80,7 @@ df_train = pd.DataFrame({
     "feature": [",".join(map(str, feat)) for feat in features_all],  # Chuyển feature vector thành chuỗi
     "label": y_train
 })
-df_train.to_csv("training_bayes.csv", index=False)
+df_train.to_csv(r"E:\MON_TREN_LOP\KHAI_PHA_DU_LIEU\CUOI_KY\Data\training_bayes.csv", index=False)
 print("✅ Training data saved to training_bayes.csv (candidate, feature, label)")
 
 # -----------------------------------------------------------------------------------------
