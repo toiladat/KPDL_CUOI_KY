@@ -1,0 +1,4 @@
+nltk
+networkx
+gensim
+scikit-learn
