@@ -15,7 +15,7 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from Ultils.read_data import read_and_process_data
-
+from Common.attach_label import assign_label
 
 # Gọi hàm từ read_data
 papers, all_text = read_and_process_data()
@@ -30,9 +30,6 @@ walks = perform_random_walks(graph)
 # Train Word2Vec
 w2v_model = Word2Vec(sentences=walks, vector_size=3, window=3, min_count=1, workers=1)
 
-# Ngưỡng dùng để gán nhãn
-frequency_threshold = 10
-min_phrase_length = 4
 
 # Tạo danh sách lưu dữ liệu huấn luyện
 X_train = []  # Feature vector
@@ -50,10 +47,9 @@ for paper in papers:
         additional = compute_additional_features(cand, text)
         feature_vector = np.concatenate([additional, emb])
 
-        # Tính các đặc trưng để gán nhãn
-        num_words = len(cand.split())
-        candidate_freq = text.lower().count(cand.lower())
-        label = 1 if (candidate_freq >= frequency_threshold or num_words >= min_phrase_length) else 0
+
+        label = assign_label(cand, text)
+
 
         # Lưu candidate, feature và nhãn vào danh sách
         candidates_all.append(cand)
