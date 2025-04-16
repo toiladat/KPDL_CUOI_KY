@@ -13,3 +13,11 @@ def compute_additional_features(candidate, text):
     
     f3 = len(candidate) / 20.0
     return np.array([f1, f2, f3])
+
+
+[
+    [21,1,0,1,0],
+    [10,1,0,0,1]
+
+    
+]
