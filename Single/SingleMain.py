@@ -6,6 +6,7 @@ from build_cooccurrence_graph import build_cooccurrence_graph
 from perform_random_walks import perform_random_walks
 from get_candidate_embedding import get_candidate_embedding
 from compute_additional_features import compute_additional_features
+from assign_label import assign_label
 import pandas as pd
 import nltk
 from nltk import word_tokenize
@@ -15,7 +16,6 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from Ultils.read_data import read_and_process_data
-from Common.attach_label import assign_label
 
 # Gọi hàm từ read_data
 papers, all_text = read_and_process_data()
