@@ -79,4 +79,3 @@ def related_word():
     output_df.to_csv(output_path, index=False)
     print(f"\n✅ Đã lưu kết quả tìm kiếm từ liên quan vào file nearest_candidates.csv")
 
-related_word()

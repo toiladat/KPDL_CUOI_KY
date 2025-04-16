@@ -3,7 +3,7 @@ from nltk import sent_tokenize, word_tokenize, pos_tag, RegexpParser
 from itertools import combinations
 
 
-def build_cooccurrence_graph(text, window=3):
+def build_cooccurrence_graph_forS(text, window=3):
     """
     Xây dựng đồ thị đồng xuất hiện từ văn bản.
     
@@ -56,4 +56,3 @@ def build_cooccurrence_graph(text, window=3):
             graph[w2][w1] = graph[w2].get(w1, 0) + 1
             
     return graph
-

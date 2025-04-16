@@ -26,10 +26,11 @@ def extract_candidates(title, abstract):
 
     candidates = set()
     
+    # Hàm kiểm tra từ hợp lệ: chỉ chứa chữ và dấu gạch ngang
     # Hàm kiểm tra từ hợp lệ: chỉ chứa chữ cái
     def is_valid_word(word):
         return bool(re.fullmatch(r'[A-Za-z]+', word))
-
+    
     # Duyệt qua từng câu đã làm sạch
     for sent in cleaned_sentences:
         tokens = word_tokenize(sent)
